@@ -20,8 +20,7 @@ load.
 #### Add function and parameters on document ready ###
 myvalidation function with first parameter is dom location of form. 
 And the second parameter is settings. For instance:
-```html
-<script>
+```javascript
 $(document).ready(function() {
 	theformdom = 'form#subscribe-form';
 	settings = {
@@ -33,7 +32,6 @@ $(document).ready(function() {
 	};
 	myvalidation(theformdom,settings);
 });
-</script>
 ```
 #### More about settings value see documentation below ####
 
