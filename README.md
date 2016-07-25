@@ -34,12 +34,28 @@ $(document).ready(function() {
 	myvalidation(theformdom,settings);
 });
 ```
-#### More about settings value see documentation below ####
+#### Add data attribute to form field ####
+For instance:
+```html
+<form method="post" action="">
+	<input type="text" name="name" id="name"
+		data-mandatory="yes" 
+		data-error="this field could not be empty"
+	>
+	<input type="text" name="email" id="email"
+		data-mandatory="yes" 
+		data-error="this field could not be empty" 
+		data-is-email="yes" 
+		data-error-email="fill with correct email format"
+	>
+</form>
+```
 
+### Setting Parameters ###
 
 
 ### Revisions History ###
-#### v.1.1.0 (May 25th, 2016) ####
+#### v.1.1.0 (July 25th, 2016) ####
 - Bug revision: allow to add style for webkit browser
 - Add feature: remove validation when field blur
 - Add feature: allow to alter css of error field and error notif
