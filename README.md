@@ -53,11 +53,10 @@ For instance:
 
 ### ~ Setting Parameters ~ ###
 There are several parameters for Setting
-- bordercolor
->use for giving border to error field and its error notification below it
-- bgcolor
->set background color for error notification
-
+| Parameter | Description |
+| --- | --- |
+| bordercolor | use for giving border to error field and its error notification below it |
+| bgcolor | set background color for error notification |
 
 ### ~ Revisions History ~ ###
 #### v.1.1.0 (July 25th, 2016) ####
