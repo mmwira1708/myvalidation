@@ -52,9 +52,9 @@ For instance:
 ```
 
 ### ~ Setting Parameters ~ ###
-There are several parameters for Setting
+There are several parameters for Setting as describe below:
 | Parameter | Description |
-| --- | --- |
+| --------- | ----------- |
 | bordercolor | use for giving border to error field and its error notification below it |
 | bgcolor | set background color for error notification |
 
