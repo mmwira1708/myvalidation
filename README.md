@@ -56,11 +56,8 @@ There are several parameters for Setting as describe below:
 
 | Parameter | Description |
 | --- | --- |
-| `bordercolor` | List all *new or modified* files |
-| `bgcolor` | Show file differences that **haven't been** staged |
-
-bordercolor use for giving border to error field and its error notification below it
-bgcolor set background color for error notification
+| `bordercolor` | use for giving border to *error field* and its *error notification* below it |
+| `bgcolor` | set background color for *error notification* |
 
 ### ~ Revisions History ~ ###
 #### v.1.1.0 (July 25th, 2016) ####
