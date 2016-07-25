@@ -39,12 +39,12 @@ $(document).ready(function() {
 
 
 ### Revisions History ###
->#### v.1.1.0 (May 25th, 2016) ####
->- Bug revision: allow to add style for webkit browser
->- Add feature: remove validation when field blur
->- Add feature: allow to alter css of error field and error notif
->- Add feature: allow to remove disabled to input type submit
->- Add feature: support placeholder for input type select
->
->#### v.1.0.0 (May 23rd, 2016) ####
->- First launching. Support only basic function of validation form
+#### v.1.1.0 (May 25th, 2016) ####
+- Bug revision: allow to add style for webkit browser
+- Add feature: remove validation when field blur
+- Add feature: allow to alter css of error field and error notif
+- Add feature: allow to remove disabled to input type submit
+- Add feature: support placeholder for input type select
+
+#### v.1.0.0 (May 23rd, 2016) ####
+- First launching. Support only basic function of validation form
