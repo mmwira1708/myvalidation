@@ -54,9 +54,9 @@ For instance:
 ### ~ Setting Parameters ~ ###
 There are several parameters for Setting
 - bordercolor
-> use for giving border to error field and its error notification below it
+>use for giving border to error field and its error notification below it
 - bgcolor
-> set background color for error notification
+>set background color for error notification
 
 
 ### ~ Revisions History ~ ###
