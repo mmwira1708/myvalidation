@@ -3,7 +3,7 @@
 ### ~ MyValidation ~ ###
 >v.1.1.0
 
-### How it works ###
+### ~ How it works ~ ###
 Include myvalidation.js to page, add myvalidation function and parameters on document ready
 state. On the form, add data attributes (data-something) to the field which needs 
 to validate. And you're good to go.
@@ -52,6 +52,11 @@ For instance:
 ```
 
 ### ~ Setting Parameters ~ ###
+There are several parameters for Setting
+- bordercolor
+> use for giving border to error field and its error notification below it
+- bgcolor
+> set background color for error notification
 
 
 ### ~ Revisions History ~ ###
