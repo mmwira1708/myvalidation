@@ -54,10 +54,22 @@ For instance:
 ### ~ Setting Parameters ~ ###
 There are several parameters for Setting as describe below:
 
-| Parameter | Description |
-| --- | --- |
-| `bordercolor` | use for giving border to *error field* and its *error notification* below it |
-| `bgcolor` | set background color for *error notification* |
+| Parameter | Value or Format | Description |
+| --- | --- | --- |
+| `bordercolor` | #hexa | use for giving border to *error field* and its *error notification* below it |
+| `bgcolor` | #hexa | set background color for *error notification* |
+| `fontcolor` |||
+| `fontsize` |||
+| `fontfamily` |||
+| `placeholdercolor` |||
+| `width` |||
+| `hideonblur` |||
+| `showfirstonly` |||
+| `fielderrorcss` |||
+| `parenterrorcss` |||
+| `errornotifcss` |||
+| `errornotifaftercss` |||
+| `webkitselectcss` |||
 
 ### ~ Revisions History ~ ###
 #### v.1.1.0 (July 25th, 2016) ####
