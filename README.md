@@ -17,9 +17,10 @@ load.
 ```html
 <script type="text/javascript" src="myvalidation.js"></script>
 ```
-#### Add function and parameters on document ready ###
+#### Add function and parameters on document ready ####
 myvalidation function with first parameter is dom location of form. 
 And the second parameter is settings. For instance:
+
 ```javascript
 $(document).ready(function() {
 	theformdom = 'form#subscribe-form';
