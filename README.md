@@ -21,6 +21,7 @@ load.
 myvalidation function with first parameter is dom location of form. 
 And the second parameter is settings. For instance:
 ```html
+<script>
 $(document).ready(function() {
 	theformdom = 'form#subscribe-form';
 	settings = {
@@ -32,16 +33,11 @@ $(document).ready(function() {
 	};
 	myvalidation(theformdom,settings);
 });
+</script>
 ```
-#### More about settings value see documentation below
+#### More about settings value see documentation below ####
 
 
-- include this script to page after jquery load script
-'<script type="text/javascript" src="assets/myvalidation.js"></script>'
-
-Simply add these "data-" prefix form element property:
-For instance:
-'<input type="text" data-mandatory="yes" data-error="this field could not be empty">'
 
 ### Revisions History ###
 >#### v.1.1.0 (May 25th, 2016) ####
