@@ -3,17 +3,39 @@
 ### MyValidation ###
 >v.1.1.0
 
-# purpose
-myvalidation is a javascript code that makes easier to create form validation
-it is run on the fly by adding "data-" prefix in form element property
+### How it works ###
+Include myvalidation.js to page, add myvalidation function and parameters on document ready
+state. On the form, add data attributes (data-something) to the field which needs 
+to validate. And you're good to go.
 
-# dependencies
-myvalidation needs jquery to operate
+### Dependencies ###
+MyValidation needs jquery to operate. Make sure include myvalidation.js after jQuery 
+load.
 
-# how to use
+### How to use ###
+#### Include myvalidation.js to page ####
+```html
+<script type="text/javascript" src="myvalidation.js"></script>
+```
+#### Add function and parameters on document ready ###
+```html
+
+```
+
 - include this script to page after jquery load script
-'<script src="assets/myvalidation.js"></script>'
+'<script type="text/javascript" src="assets/myvalidation.js"></script>'
 
 Simply add these "data-" prefix form element property:
 For instance:
 '<input type="text" data-mandatory="yes" data-error="this field could not be empty">'
+
+### Revisions History ###
+>#### v.1.1.0 (May 25th, 2016) ####
+>- Bug revision: allow to add style for webkit browser
+>- Add feature: remove validation when field blur
+>- Add feature: allow to alter css of error field and error notif
+>- Add feature: allow to remove disabled to input type submit
+>- Add feature: support placeholder for input type select
+>
+>#### v.1.0.0 (May 23rd, 2016) ####
+>- First launching. Support only basic function of validation form

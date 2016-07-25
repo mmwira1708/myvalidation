@@ -61,6 +61,8 @@ function myvalidation(theformdom,settings) {
      * - data mandatory parent
      * - support for untouched form
      * - php validation
+     * - allow integration with select2 and uniform
+     * - styling for optgroup
      */
     
     // remove defaulf html5 form validation
