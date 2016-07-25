@@ -1,5 +1,7 @@
-# myvalidation
-Validation for HTML Form
+##MyValidation is the jQuery form validation for beginner to advance user
+
+### MyValidation ###
+>v.1.1.0
 
 # purpose
 myvalidation is a javascript code that makes easier to create form validation
