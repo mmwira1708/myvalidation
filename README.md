@@ -18,9 +18,23 @@ load.
 <script type="text/javascript" src="myvalidation.js"></script>
 ```
 #### Add function and parameters on document ready ###
+myvalidation function with first parameter is dom location of form. 
+And the second parameter is settings. For instance:
 ```html
-
+$(document).ready(function() {
+	theformdom = 'form#subscribe-form';
+	settings = {
+		bordercolor: '#ff0000',
+     	bgcolor: '#ffcc00',
+     	fontsize: '0.9',
+     	fontfamily: 'Oswald, sans-serif',
+     	width: 'full'
+	};
+	myvalidation(theformdom,settings);
+});
 ```
+#### More about settings value see documentation below
+
 
 - include this script to page after jquery load script
 '<script type="text/javascript" src="assets/myvalidation.js"></script>'
