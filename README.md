@@ -1,6 +1,6 @@
 ##MyValidation is the jQuery form validation for beginner to advance user
 
-### MyValidation ###
+### ~ MyValidation ~ ###
 >v.1.1.0
 
 ### How it works ###
@@ -8,11 +8,11 @@ Include myvalidation.js to page, add myvalidation function and parameters on doc
 state. On the form, add data attributes (data-something) to the field which needs 
 to validate. And you're good to go.
 
-### Dependencies ###
+### ~ Dependencies ~ ###
 MyValidation needs jquery to operate. Make sure include myvalidation.js after jQuery 
 load.
 
-### How to use ###
+### ~ How to use ~ ###
 #### Include myvalidation.js to page ####
 ```html
 <script type="text/javascript" src="myvalidation.js"></script>
@@ -51,10 +51,10 @@ For instance:
 </form>
 ```
 
-### Setting Parameters ###
+### ~ Setting Parameters ~ ###
 
 
-### Revisions History ###
+### ~ Revisions History ~ ###
 #### v.1.1.0 (July 25th, 2016) ####
 - Bug revision: allow to add style for webkit browser
 - Add feature: remove validation when field blur
