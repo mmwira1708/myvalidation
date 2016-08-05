@@ -108,8 +108,7 @@ Join this gitHub or simply contact me at mmwira1708@gmail.com to make this js be
 Hello collaborators, here's few of my ideas about the next version of MyValidation
 Come on and join to make this MyValidation even better.
 - field validation on lose focus (blur), so after filling error field, the visitor 
-directly know whether
-- single field validation on blur
+directly know whether it is done or not.
 - hack for opera css
 - data mandatory parent
 - support for untouched form
