@@ -91,7 +91,7 @@ data attribute settings for fields:
 | `data-error-email` | text | - | for field with data-is-email="yes", error text if wrong email format inserted |
 
 ### ~ Any idea to make this better? ~ ###
-Join as collaborator or simply contact me at mmwira1708@gmail.com to make this js better.
+Join this gitHub or simply contact me at mmwira1708@gmail.com to make this js better.
 
 ### ~ Revisions History ~ ###
 #### v.1.1.0 (July 25th, 2016) ####
