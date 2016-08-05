@@ -54,22 +54,22 @@ For instance:
 ### ~ Setting Parameters ~ ###
 There are several parameters for Setting as describe below:
 
-| Parameter | Value or Format | Default Value | Description |
+| Parameter | Example or Format | Default Value | Description |
 | --- | --- | --- | --- |
-| `bordercolor` | #hexa | #d13636 | use for giving border to *error field* and its *error notification* below it |
-| `bgcolor` | #hexa | #d13636 | set background color for *error notification* |
-| `fontcolor` | #hexa | #ffffff | set font color for *error notification* |
+| `bordercolor` | #ff0000 | #d13636 | use for giving border to *error field* and its *error notification* below it |
+| `bgcolor` | #ff0000 | #d13636 | set background color for *error notification* |
+| `fontcolor` | #222 | #ffffff | set font color for *error notification* |
 | `fontsize` | float | 1 | set font size for *error notification* |
 | `fontfamily` | name of font |  | set font family for *error notification* |
 | `placeholdercolor` | #hexa | #bbb | set placeholder color of fields |
 | `width` | full, auto or integer | full | width of *error notification* |
-| `hideonblur` | yes | no | *error notification* |
-| `showfirstonly` ||||
-| `fielderrorcss` ||||
-| `parenterrorcss` ||||
-| `errornotifcss` ||||
-| `errornotifaftercss` ||||
-| `webkitselectcss` ||||
+| `hideonblur` | yes | no | hide *error notification* when field lose focus |
+| `showfirstonly` | yes | no | when multiple errors occur, show only first *error notification* |
+| `fielderrorcss` | border: 2px solid red; background-color: #aaa; | - | add css to .field-error class (locate in field when error) |
+| `parenterrorcss` | border: 2px solid red; background-color: #aaa; | - | add css to .parent-error class (locate in parent of error fields) |
+| `errornotifcss` | border: 2px solid red; background-color: #aaa; | - | add css to .error-notif class (error notification itself) |
+| `errornotifaftercss` | right: 30px; | - | add css to .error-notif::after class (appear as little arrow above error notification) |
+| `webkitselectcss` | padding-left: 20px; font-size: 1.2em; | - | add css for select field on webkit device |
 
 ### ~ Revisions History ~ ###
 #### v.1.1.0 (July 25th, 2016) ####
