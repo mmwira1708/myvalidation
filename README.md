@@ -54,22 +54,22 @@ For instance:
 ### ~ Setting Parameters ~ ###
 There are several parameters for Setting as describe below:
 
-| Parameter | Value or Format | Description |
-| --- | --- | --- |
-| `bordercolor` | #hexa | use for giving border to *error field* and its *error notification* below it |
-| `bgcolor` | #hexa | set background color for *error notification* |
-| `fontcolor` |||
-| `fontsize` |||
-| `fontfamily` |||
-| `placeholdercolor` |||
-| `width` |||
-| `hideonblur` |||
-| `showfirstonly` |||
-| `fielderrorcss` |||
-| `parenterrorcss` |||
-| `errornotifcss` |||
-| `errornotifaftercss` |||
-| `webkitselectcss` |||
+| Parameter | Value or Format | Default Value | Description |
+| --- | --- | --- | --- |
+| `bordercolor` | #hexa | #d13636 | use for giving border to *error field* and its *error notification* below it |
+| `bgcolor` | #hexa | #d13636 | set background color for *error notification* |
+| `fontcolor` | #hexa | #ffffff | set font color for *error notification* |
+| `fontsize` | float | 1 | set font size for *error notification* |
+| `fontfamily` | name of font |  | set font family for *error notification* |
+| `placeholdercolor` | #hexa | #bbb | set placeholder color of fields |
+| `width` | full, auto or integer | full | width of *error notification* |
+| `hideonblur` | yes | no | *error notification* |
+| `showfirstonly` ||||
+| `fielderrorcss` ||||
+| `parenterrorcss` ||||
+| `errornotifcss` ||||
+| `errornotifaftercss` ||||
+| `webkitselectcss` ||||
 
 ### ~ Revisions History ~ ###
 #### v.1.1.0 (July 25th, 2016) ####
@@ -81,3 +81,16 @@ There are several parameters for Setting as describe below:
 
 #### v.1.0.0 (May 23rd, 2016) ####
 - First launching. Support only basic function of validation form
+
+### Next Ideas ###
+Hello collaborators, here's few of my ideas about the next version of MyValidation
+Come on and join to make this MyValidation even better.
+- field validation on lose focus (blur), so after filling error field, the visitor 
+directly know whether
+- single field validation on blur
+- hack for opera css
+- data mandatory parent
+- support for untouched form
+- php validation
+- allow integration with select2 and uniform
+- styling for optgroup

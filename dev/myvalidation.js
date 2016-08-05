@@ -63,6 +63,7 @@ function myvalidation(theformdom,settings) {
      * - php validation
      * - allow integration with select2 and uniform
      * - styling for optgroup
+     * - error notification width in percent
      */
     
     // remove defaulf html5 form validation
