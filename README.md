@@ -80,18 +80,18 @@ data attribute settings for fields:
 | (beta) `data-mandatory` | parent | - | for validate multiple field. wrap multiple field to be validate, then add some div or span wrap to them. add this data attribute to that wrapper |
 | `data-error` | text | - | default *error notification* text for error field |
 | `data-error-hidden` | yes | no | hide *error notification*, but class for error field still exist |
-| `data-error-min` | integer | - | only for input type text, to set how many minimum characters are allowed |
-| `data-error-max` | integer | - | only for input type text, to set how many maximum characters are allowed |
-| `data-error-allowed` | allowed characters | - | to set allowed characters in input type text. for instance: if data-error-allowed="0123456789 +()" will error if the input is "+62 563.456" because it contain period which is not include in this attribute |
+| `data-min-char` | integer | - | only for input type text, to set how many minimum characters are allowed |
+| `data-error-min` | text | can not less than [min-char] characters | error text notification when number of characters less than data-min-char |
+| `data-max-char` | integer | - | only for input type text, to set how many maximum characters are allowed |
+| `data-error-max` | text | can not exceed [max-char] characters | error text notification when number of characters more than data-max-char |
+| `data-allowed-char` | allowed characters | - | to set allowed characters in input type text. for instance: if data-error-allowed="0123456789 +()" will error if the input is "+62 563.456" because it contain period which is not include in this attribute |
+| `data-error-allowed` | text | inputs must one of these characters: [allowed-char] | error text notification when one or more characters that's not the part of data-allowed-char occur |
 | (beta) `data-mandatory-child` | name,address,age | - | use together with data-mandatory="parent", handle child's name of fileds within this data attribut. Error when the value is empty |
-| `width` | full, auto or integer | full | width of *error notification* |
-| `hideonblur` | yes | no | hide *error notification* when field lose focus |
-| `showfirstonly` | yes | no | when multiple errors occur, show only first *error notification* |
-| `fielderrorcss` | border: 2px solid red; background-color: #aaa; | - | add css to .field-error class (locate in field when error) |
-| `parenterrorcss` | border: 2px solid red; background-color: #aaa; | - | add css to .parent-error class (locate in parent of error fields) |
-| `errornotifcss` | border: 2px solid red; background-color: #aaa; | - | add css to .error-notif class (error notification itself) |
-| `errornotifaftercss` | right: 30px; | - | add css to .error-notif::after class (appear as little arrow above error notification) |
-| `webkitselectcss` | padding-left: 20px; font-size: 1.2em; | - | add css for select field on webkit device |
+| `data-is-email` | yes | no | treat this field as email, and will error when not in email format |
+| `data-error-email` | text | - | for field with data-is-email="yes", error text if wrong email format inserted |
+
+### ~ Any idea to make this better? ~ ###
+Join as collaborator or simply contact me at mmwira1708@gmail.com to make this js better.
 
 ### ~ Revisions History ~ ###
 #### v.1.1.0 (July 25th, 2016) ####
