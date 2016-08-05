@@ -35,7 +35,7 @@ function myvalidation(theformdom,settings) {
      * 
      * data-mandatory: yes
      * data-error: error text
-     * data-error-hidden: true
+     * data-error-hidden: yes
      * data-error-min: error text if string is too short
      * data-error-max: error text if string is too long
      * data-error-allowed: error text when inputs contains not allowed char 

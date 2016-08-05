@@ -71,6 +71,28 @@ There are several parameters for Setting as describe below:
 | `errornotifaftercss` | right: 30px; | - | add css to .error-notif::after class (appear as little arrow above error notification) |
 | `webkitselectcss` | padding-left: 20px; font-size: 1.2em; | - | add css for select field on webkit device |
 
+### ~ data- Field Settings ~ ###
+data attribute settings for fields:
+
+| Data Attribute | Example or Format | Default Value | Description |
+| --- | --- | --- | --- |
+| `data-mandatory` | yes | - | set to validate this field |
+| (beta) `data-mandatory` | parent | - | for validate multiple field. wrap multiple field to be validate, then add some div or span wrap to them. add this data attribute to that wrapper |
+| `data-error` | text | - | default *error notification* text for error field |
+| `data-error-hidden` | yes | no | hide *error notification*, but class for error field still exist |
+| `data-error-min` | integer | - | only for input type text, to set how many minimum characters are allowed |
+| `data-error-max` | integer | - | only for input type text, to set how many maximum characters are allowed |
+| `data-error-allowed` | allowed characters | - | to set allowed characters in input type text. for instance: if data-error-allowed="0123456789 +()" will error if the input is "+62 563.456" because it contain period which is not include in this attribute |
+| (beta) `data-mandatory-child` | name,address,age | - | use together with data-mandatory="parent", handle child's name of fileds within this data attribut. Error when the value is empty |
+| `width` | full, auto or integer | full | width of *error notification* |
+| `hideonblur` | yes | no | hide *error notification* when field lose focus |
+| `showfirstonly` | yes | no | when multiple errors occur, show only first *error notification* |
+| `fielderrorcss` | border: 2px solid red; background-color: #aaa; | - | add css to .field-error class (locate in field when error) |
+| `parenterrorcss` | border: 2px solid red; background-color: #aaa; | - | add css to .parent-error class (locate in parent of error fields) |
+| `errornotifcss` | border: 2px solid red; background-color: #aaa; | - | add css to .error-notif class (error notification itself) |
+| `errornotifaftercss` | right: 30px; | - | add css to .error-notif::after class (appear as little arrow above error notification) |
+| `webkitselectcss` | padding-left: 20px; font-size: 1.2em; | - | add css for select field on webkit device |
+
 ### ~ Revisions History ~ ###
 #### v.1.1.0 (July 25th, 2016) ####
 - Bug revision: allow to add style for webkit browser
