@@ -119,3 +119,5 @@ directly know whether it is done or not.
 - send data when form abandoned
 - default error notification for empty
 - create interaction interface at demo folder to make the programmer easy to build their form validation
+- when use data-allowed-char and data-min-char at the same time, still shows 2 error notifications. It must show only error-allowed first then
+evaluate min characters

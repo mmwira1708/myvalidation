@@ -102,8 +102,10 @@
                             <input type="text" class="form-control" id="phone" placeholder="Phone"
                                 data-mandatory="yes"
                                 data-error="This field could not be empty"
-                                data-is-email="yes"
-                                data-error-email="Must be filled with correct email format"
+                                data-allowed-char="0123456789-+ "
+                                data-error-allowed="Only number, dash, plus sign and space are allowed"
+                                data-min-char="5"
+                                data-error-min="Need more number to complete"
                             >
                         </div>
                     </div>
