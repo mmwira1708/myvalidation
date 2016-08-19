@@ -89,7 +89,7 @@ data attribute settings for fields:
 | (beta) `data-mandatory-child` | name,address,age | - | use together with data-mandatory="parent", handle child's name of fileds within this data attribut. Error when the value is empty |
 | `data-is-email` | yes | no | treat this field as email, and will error when not in email format |
 | `data-error-email` | text | - | for field with data-is-email="yes", error text if wrong email format inserted |
-| `data-placeholder` | yes | - | data field attribute only for option of select which is want to be placeholder for the select field |
+| `data-placeholder` | yes | - | data field attribute only for option of select which is want to be treated as placeholder |
 
 ### ~ Any idea to make this better? ~ ###
 Join this gitHub or simply contact me at mmwira1708@gmail.com to make this js better.
@@ -117,3 +117,5 @@ directly know whether it is done or not.
 - allow integration with select2 and uniform
 - styling for optgroup
 - send data when form abandoned
+- default error notification for empty
+- create interaction interface at demo folder to make the programmer easy to build their form validation
