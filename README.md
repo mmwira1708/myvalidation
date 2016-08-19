@@ -115,3 +115,4 @@ directly know whether it is done or not.
 - php validation
 - allow integration with select2 and uniform
 - styling for optgroup
+- send data when form abandoned
