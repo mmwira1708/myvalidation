@@ -81,14 +81,15 @@ data attribute settings for fields:
 | `data-error` | text | - | default *error notification* text for error field |
 | `data-error-hidden` | yes | no | hide *error notification*, but class for error field still exist |
 | `data-min-char` | integer | - | only for input type text, to set how many minimum characters are allowed |
-| `data-error-min` | text | can not less than [min-char] characters | error text notification when number of characters less than data-min-char |
+| `data-error-min` | text | can not less than [data-min-char] characters | error text notification when number of characters less than data-min-char |
 | `data-max-char` | integer | - | only for input type text, to set how many maximum characters are allowed |
-| `data-error-max` | text | can not exceed [max-char] characters | error text notification when number of characters more than data-max-char |
+| `data-error-max` | text | can not exceed [data-max-char] characters | error text notification when number of characters more than data-max-char |
 | `data-allowed-char` | allowed characters | - | to set allowed characters in input type text. for instance: if data-error-allowed="0123456789 +()" will error if the input is "+62 563.456" because it contain period which is not include in this attribute |
 | `data-error-allowed` | text | inputs must one of these characters: [allowed-char] | error text notification when one or more characters that's not the part of data-allowed-char occur |
 | (beta) `data-mandatory-child` | name,address,age | - | use together with data-mandatory="parent", handle child's name of fileds within this data attribut. Error when the value is empty |
 | `data-is-email` | yes | no | treat this field as email, and will error when not in email format |
 | `data-error-email` | text | - | for field with data-is-email="yes", error text if wrong email format inserted |
+| `data-placeholder` | yes | - | data field attribute only for option of select which is want to be placeholder for the select field |
 
 ### ~ Any idea to make this better? ~ ###
 Join this gitHub or simply contact me at mmwira1708@gmail.com to make this js better.
@@ -104,7 +105,7 @@ Join this gitHub or simply contact me at mmwira1708@gmail.com to make this js be
 #### v.1.0.0 (May 23rd, 2016) ####
 - First launching. Support only basic function of validation form
 
-### Next Ideas ###
+### ~ Next Ideas ~ ###
 Hello collaborators, here's few of my ideas about the next version of MyValidation
 Come on and join to make this MyValidation even better.
 - field validation on lose focus (blur), so after filling error field, the visitor 
