@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Additional css for myvalidation
+   Version: v.1.2.0 (August 21th, 2016)
+   ========================================================================== */
+
+/**
+ * For select multiple field
+ */
+select[multiple] {
+    color: #7f7f7f;
+}
+
+/**
+ * For select
+ */
+select {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+}
+
+/**
+ * For webkit device and safari
+ */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+    select[multiple] {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+/**
+ * For Opera >= 9.5
+ */
+_:-o-prefocus, body:last-child select {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}
+
+/**
+ * Please take a look above padding-lefts:
+ * This condition is valid when default input padding left is 12px
+ * 
+ * so, for select:
+ * in firefox become 8px. in other words is default subtract by 4 (default-4)
+ * in safari and opera is same as its default: 12px
+ *
+ * for select multiple:
+ * in firefox become 8px (default-4)
+ * in safari become 10px (default-2)
+ * in opera is same as its default: 12px
+ *
+ * For more detail about browser hacks, visit this site:
+ * http://browserhacks.com/
+ */
+
+
+
+
+
+
+
+
+
+
+
+

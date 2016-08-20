@@ -1,6 +1,8 @@
 function myvalidation(theformdom,settings) {
     
     /**
+     * Version: v.1.2.0 (August 21th, 2016)
+     * 
      * Example of use:
      *
      * theformdom = 'form#subscribe-form';
@@ -56,14 +58,17 @@ function myvalidation(theformdom,settings) {
      *
      * Hello collaborators.
      * This things need to be repaired on next version:
-     * - single field validation on blur
-     * - hack for opera css
-     * - data mandatory parent
+     * - field validation on lose focus (blur), so after filling error field, the visitor directly know whether it is done or not.
+     * - finalizing data mandatory parent
      * - support for untouched form
      * - php validation
      * - allow integration with select2 and uniform
      * - styling for optgroup
-     * - error notification width in percent
+     * - send data when form abandoned
+     * - default error notification for empty
+     * - create interaction interface at demo folder to make the programmer easy to build their form validation
+     * - default error notification for empty field
+     * - support popup error notification
      */
     
     // remove defaulf html5 form validation
@@ -87,7 +92,7 @@ function myvalidation(theformdom,settings) {
     
     // default setting for placeholdercolor
     if ( !('placeholdercolor' in settings) ) {
-	errorplaceholdercolor = '#bbb';
+	errorplaceholdercolor = '#7f7f7f';
     } else {
 	// if placeholdercolor setting occurs
 	errorplaceholdercolor = settings.placeholdercolor;
@@ -181,7 +186,7 @@ function myvalidation(theformdom,settings) {
 	precss = precss + 'opacity: 1;';
     precss = precss + '}';
     
-    precss = precss + 'input, select {';
+    precss = precss + 'input[type="text"], input[type="password"], input[type="email"], select {';
 	precss = precss + '-webkit-appearance: none;';
     precss = precss + '}';
     
@@ -245,6 +250,9 @@ function myvalidation(theformdom,settings) {
     // whem form submit..
     $(theformdom).submit(function() {
 	
+	activityx = $('#activity').val();
+	console.log(activityx);
+	
 	/**
 	 * set zero to numerror.
 	 * this variable is to detect how many error found
@@ -291,6 +299,12 @@ function myvalidation(theformdom,settings) {
 		
 		if (fieldcontent == "") {
 		    console.log(fieldname+' error');
+		    numerror.push("error");
+		    if (errnotifhidden == null) {
+			$(this).after('<span id="error-notif-'+fieldname+'" class="error-notif">'+errnotif+'</span>');
+		    }
+		    $(this).addClass('field-error');
+		} else if (fieldcontent == null) {
 		    numerror.push("error");
 		    if (errnotifhidden == null) {
 			$(this).after('<span id="error-notif-'+fieldname+'" class="error-notif">'+errnotif+'</span>');
@@ -354,6 +368,25 @@ function myvalidation(theformdom,settings) {
 		 * check what characters allowed to occurs
 		 */
 		if ( (fieldtype == "text" || fieldtype == "password" || $(this).is("textarea")) && fieldcontent != "" ) {
+		    iserrormultiple = false;
+		    if (allowedchar != null) {
+			checkallowedchar = allowed_char(fieldcontent,allowedchar);
+			if (checkallowedchar == false) {
+			    numerror.push("error");
+			    if (errnotifhidden == null) {
+				if (errnotifallowed == null) {
+				    errnotif = 'inputs must one of these characters: '+allowedchar;
+				} else {
+				    errnotif = errnotifallowed;
+				}
+				if (iserrormultiple == false) {
+				    $(this).after('<span id="error-notif-'+fieldname+'" class="error-notif">'+errnotif+'</span>');
+				    iserrormultiple = true;
+				}
+			    }
+			    $(this).addClass('field-error');
+			}
+		    }
 		    if (minchar != null) {
 			checkminchar = minimum_char(fieldcontent,minchar);
 			if (checkminchar == false) {
@@ -364,7 +397,10 @@ function myvalidation(theformdom,settings) {
 				} else {
 				    errnotif = errnotifmin;
 				}
-				$(this).after('<span id="error-notif-'+fieldname+'" class="error-notif">'+errnotif+'</span>');
+				if (iserrormultiple == false) {
+				    $(this).after('<span id="error-notif-'+fieldname+'" class="error-notif">'+errnotif+'</span>');
+				    iserrormultiple = true;
+				}
 			    }
 			    $(this).addClass('field-error');
 			}
@@ -379,26 +415,15 @@ function myvalidation(theformdom,settings) {
 				} else {
 				    errnotif = errnotifmax;
 				}
-				$(this).after('<span id="error-notif-'+fieldname+'" class="error-notif">'+errnotif+'</span>');
-			    }
-			    $(this).addClass('field-error');
-			}
-		    }
-		    if (allowedchar != null) {
-			checkallowedchar = allowed_char(fieldcontent,allowedchar);
-			if (checkallowedchar == false) {
-			    numerror.push("error");
-			    if (errnotifhidden == null) {
-				if (errnotifallowed == null) {
-				    errnotif = 'inputs must one of these characters: '+allowedchar;
-				} else {
-				    errnotif = errnotifallowed;
+				if (iserrormultiple == false) {
+				    $(this).after('<span id="error-notif-'+fieldname+'" class="error-notif">'+errnotif+'</span>');
+				    iserrormultiple = true;
 				}
-				$(this).after('<span id="error-notif-'+fieldname+'" class="error-notif">'+errnotif+'</span>');
 			    }
 			    $(this).addClass('field-error');
 			}
 		    }
+		    
 		    
 		}
 		
@@ -431,6 +456,9 @@ function myvalidation(theformdom,settings) {
 		    fieldtypechild = $('[name="'+datamandatoryfieldname[ch]+'"]').attr('type');
 		    
 		    if (fieldcontentchild == "") {
+			numerrorchild.push("error");
+			$('[name="'+fieldnamechild+'"]').addClass('field-error');
+		    } else if (fieldcontentchild == null) {
 			numerrorchild.push("error");
 			$('[name="'+fieldnamechild+'"]').addClass('field-error');
 		    } else if (dataisemailchild == "yes") {

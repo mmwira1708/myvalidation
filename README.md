@@ -13,9 +13,10 @@ MyValidation needs jquery to operate. Make sure include myvalidation.js after jQ
 load.
 
 ### ~ How to use ~ ###
-#### Include myvalidation.js to page ####
+#### Include myvalidation.js and myvalidation.css to page ####
 ```html
 <script type="text/javascript" src="myvalidation.js"></script>
+<link rel="stylesheet" href="myvalidation.css">
 ```
 #### Add function and parameters on document ready ####
 myvalidation function with first parameter is dom location of form. 
@@ -61,7 +62,7 @@ There are several parameters for Setting as describe below:
 | `fontcolor` | #222 | #ffffff | set font color for *error notification* |
 | `fontsize` | float | 1 | set font size for *error notification* |
 | `fontfamily` | name of font |  | set font family for *error notification* |
-| `placeholdercolor` | #hexa | #bbb | set placeholder color of fields |
+| `placeholdercolor` | #hexa | #7f7f7f | set placeholder color of fields |
 | `width` | full, auto or integer | full | width of *error notification* |
 | `hideonblur` | yes | no | hide *error notification* when field lose focus |
 | `showfirstonly` | yes | no | when multiple errors occur, show only first *error notification* |
@@ -95,6 +96,11 @@ data attribute settings for fields:
 Join this gitHub or simply contact me at mmwira1708@gmail.com to make this js better.
 
 ### ~ Revisions History ~ ###
+#### v.1.2.0 (August 21th, 2016) ####
+- Bug revision: remove doubel error notif for allowed char and min-max char
+- Add feature: hack for opera css: in .css file
+- Add feature: support error notif for select multiple
+
 #### v.1.1.0 (July 25th, 2016) ####
 - Bug revision: allow to add style for webkit browser
 - Add feature: remove validation when field blur
@@ -106,12 +112,11 @@ Join this gitHub or simply contact me at mmwira1708@gmail.com to make this js be
 - First launching. Support only basic function of validation form
 
 ### ~ Next Ideas ~ ###
-Hello collaborators, here's few of my ideas about the next version of MyValidation
+Hello collaborators, here's few of ideas about the next version of MyValidation
 Come on and join to make this MyValidation even better.
 - field validation on lose focus (blur), so after filling error field, the visitor 
 directly know whether it is done or not.
-- hack for opera css
-- data mandatory parent
+- finalizing data mandatory parent
 - support for untouched form
 - php validation
 - allow integration with select2 and uniform
@@ -119,5 +124,5 @@ directly know whether it is done or not.
 - send data when form abandoned
 - default error notification for empty
 - create interaction interface at demo folder to make the programmer easy to build their form validation
-- when use data-allowed-char and data-min-char at the same time, still shows 2 error notifications. It must show only error-allowed first then
-evaluate min characters
+- default error notification for empty field
+- support popup error notification

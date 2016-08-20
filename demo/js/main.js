@@ -17,7 +17,7 @@ $(document).ready(function() {
     };
     */
     settings = {
-        placeholdercolor : '#bbb',
+        fontsize : '0.9',
     };
     myvalidation('#form-demo',settings);    
     
