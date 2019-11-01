@@ -289,10 +289,16 @@ function myvalidation(theformdom,settings) {
 	    
 	    errnotifmin = $(this).attr('data-error-min');
 	    errnotifallowed = $(this).attr('data-error-allowed');
+		errnotifdisallow = $(this).attr('data-error-disallow');
+		errexacttext = $(this).attr('data-error-exacttext');
+		errcombonumletter = $(this).attr('data-error-combonumletter');
 	    errnotifmax = $(this).attr('data-error-max');
 	    minchar = $(this).attr('data-min-char');
 	    maxchar = $(this).attr('data-max-char');
 	    allowedchar = $(this).attr('data-allowed-char');
+		disallowtext = $(this).attr('data-disallow-text');
+		exacttext = $(this).attr('data-exact-text');
+		combonumletter = $(this).attr('data-combo-numletter');
 
 	    // if data-mandatory equals yes -> means must be evaluated
 	    if (datamandatorytype == "yes") {
@@ -369,6 +375,13 @@ function myvalidation(theformdom,settings) {
 		 */
 		if ( (fieldtype == "text" || fieldtype == "password" || $(this).is("textarea")) && fieldcontent != "" ) {
 		    iserrormultiple = false;
+			/**
+			 * trim the text
+			 */
+			textcontent = $(this).val().trim();
+			$(this).val(textcontent);
+			fieldcontent = textcontent;
+			
 		    if (allowedchar != null) {
 			checkallowedchar = allowed_char(fieldcontent,allowedchar);
 			if (checkallowedchar == false) {
@@ -387,6 +400,64 @@ function myvalidation(theformdom,settings) {
 			    $(this).addClass('field-error');
 			}
 		    }
+			
+			if (disallowtext != null) {
+			checkdisallowtext = disallow_text(fieldcontent,disallowtext);
+			if (checkdisallowtext == false) {
+			    numerror.push("error");
+			    if (errnotifhidden == null) {
+				if (errnotifdisallow == null) {
+				    errnotif = 'not allowed to input this text: '+disallowtext;
+				} else {
+				    errnotif = errnotifdisallow;
+				}
+				if (iserrormultiple == false) {
+				    $(this).after('<span id="error-notif-'+fieldname+'" class="error-notif">'+errnotif+'</span>');
+				    iserrormultiple = true;
+				}
+			    }
+			    $(this).addClass('field-error');
+			}
+		    }
+			
+			if (exacttext != null) {
+			checkexacttext = exact_text(fieldcontent,exacttext);
+			if (checkexacttext == false) {
+			    numerror.push("error");
+			    if (errnotifhidden == null) {
+				if (errexacttext == null) {
+				    errnotif = 'must exactly same as this: '+exacttext;
+				} else {
+				    errnotif = errexacttext;
+				}
+				if (iserrormultiple == false) {
+				    $(this).after('<span id="error-notif-'+fieldname+'" class="error-notif">'+errnotif+'</span>');
+				    iserrormultiple = true;
+				}
+			    }
+			    $(this).addClass('field-error');
+			}
+		    }
+			
+			if ((combonumletter != null)&&(combonumletter == "yes")) {
+			checkcomboinput = combo_input(fieldcontent);
+			if (checkcomboinput == false) {
+			    numerror.push("error");
+			    if (errnotifhidden == null) {
+				if (errcombonumletter == null) {
+				    errnotif = 'must contains letter and number';
+				} else {
+				    errnotif = errcombonumletter;
+				}
+				if (iserrormultiple == false) {
+				    $(this).after('<span id="error-notif-'+fieldname+'" class="error-notif">'+errnotif+'</span>');
+				    iserrormultiple = true;
+				}
+			    }
+			    $(this).addClass('field-error');
+			}
+		    }
+			
 		    if (minchar != null) {
 			checkminchar = minimum_char(fieldcontent,minchar);
 			if (checkminchar == false) {
@@ -578,6 +649,42 @@ function allowed_char(thestring,charallowed) {
     } else {
 	return false;
     }
+}
+
+function disallow_text(thestring,thedisallowtext) {
+	if (thestring == thedisallowtext) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function exact_text(thestring,theexacttext) {
+	if (thestring != theexacttext) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function combo_input(thestring) {
+	iscomboinput = false;
+	
+	if (thestring.match(/[a-zA-Z]/i)) {
+		// alphabet letters found
+		iscomboinput = true;
+	} else {
+		iscomboinput = false;
+	}
+	
+	if (thestring.match(/[0-9]/i)) {
+		// number found
+		iscomboinput = true;
+	} else {
+		iscomboinput = false;
+	}
+	
+	return iscomboinput;
 }
 
 function minimum_char(thestring,minnumber) {
