@@ -1,7 +1,7 @@
 ##MyValidation is the jQuery form validation for beginner to advance user
 
 ### ~ MyValidation ~ ###
->v.1.1.0
+>v.1.2.0 (Nov, 2019)
 
 ### ~ How it works ~ ###
 Include myvalidation.js to page, add myvalidation function and parameters on document ready
@@ -86,7 +86,13 @@ data attribute settings for fields:
 | `data-max-char` | integer | - | only for input type text, to set how many maximum characters are allowed |
 | `data-error-max` | text | can not exceed [data-max-char] characters | error text notification when number of characters more than data-max-char |
 | `data-allowed-char` | allowed characters | - | to set allowed characters in input type text. for instance: if data-error-allowed="0123456789 +()" will error if the input is "+62 563.456" because it contain period which is not include in this attribute |
-| `data-error-allowed` | text | inputs must one of these characters: [allowed-char] | error text notification when one or more characters that's not the part of data-allowed-char occur |
+| `data-error-allowed` | text | inputs must one of these characters: [data-allowed-char] | error text notification when one or more characters that's not the part of data-allowed-char occur |
+| `data-disallow-text` | text | - | to set disallowed text into field and will throw error notification when typed. for instance: data-disallow-text="lorem ipsum dolor". |
+| `data-error-disallow` | text | not allowed to input this text: [data-disallow-text] | error text notification when text defined in data-disallow-text typed. |
+| `data-exact-text` | text | - | to set the text that must be inserted into field. Otherwise will throw error. for instance: data-exact-text="yes I am agree". |
+| `data-error-exacttext` | text | must exactly same as this: [data-exact-text] | error text notification when text is different as defined in data-exact-text. |
+| `data-combo-numletter` | text | - | to set input text must be consist of both number and letter. Otherwise will throw error. |
+| `data-error-combonumletter` | text | must contains letter and number | error text notification when input text not consist of both number and letter. |
 | (beta) `data-mandatory-child` | name,address,age | - | use together with data-mandatory="parent", handle child's name of fileds within this data attribut. Error when the value is empty |
 | `data-is-email` | yes | no | treat this field as email, and will error when not in email format |
 | `data-error-email` | text | - | for field with data-is-email="yes", error text if wrong email format inserted |
@@ -96,6 +102,13 @@ data attribute settings for fields:
 Join this gitHub or simply contact me at mmwira1708@gmail.com to make this js better.
 
 ### ~ Revisions History ~ ###
+
+#### v.1.3.0 (November 1st, 2019) ####
+- Add trim to input text and textarea
+- Add feature: disallowed text. for example the input field will throw error when "lorem ipsum dolor" typed
+- Add feature: exact text. for example the input field will throw error when "john cena" not typed
+- Add feature: combo number and letter. the field must be consist of both number and letter
+
 #### v.1.2.0 (August 21th, 2016) ####
 - Bug revision: remove doubel error notif for allowed char and min-max char
 - Add feature: hack for opera css: in .css file
