@@ -668,23 +668,28 @@ function exact_text(thestring,theexacttext) {
 }
 
 function combo_input(thestring) {
-	iscomboinput = false;
+	iscomboinputnumber = false;
+	iscomboinputletter = false;
 	
 	if (thestring.match(/[a-zA-Z]/i)) {
 		// alphabet letters found
-		iscomboinput = true;
+		iscomboinputletter = true;
 	} else {
-		iscomboinput = false;
+		iscomboinputletter = false;
 	}
 	
 	if (thestring.match(/[0-9]/i)) {
 		// number found
-		iscomboinput = true;
+		iscomboinputnumber = true;
 	} else {
-		iscomboinput = false;
+		iscomboinputnumber = false;
 	}
 	
-	return iscomboinput;
+	if ((iscomboinputletter == true)&&(iscomboinputnumber == true)) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 function minimum_char(thestring,minnumber) {
